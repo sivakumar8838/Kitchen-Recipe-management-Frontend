@@ -64,7 +64,18 @@ function ResetPassword() {
           />
           </div>
           <p className='p'>{res_mgs}</p>
+        
           <div className='button-diva'>
+          
+          <Link to='/' className='Link'>
+          <button>
+          <span className='box'>
+          Login
+          </span>
+            
+          </button>
+        
+        </Link>
             <button onClick={handleSendOTP} className='submit3'>
             Send OTP
             </button>
@@ -99,9 +110,6 @@ function ResetPassword() {
             </div>
           </div>
         ) : null}
-        <Link to='/'>
-        Login
-        </Link>
       </div>
     </div>
   );
