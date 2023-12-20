@@ -1,8 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import "../ResetPassword.css";
-
+import '../Resetpassword.css'
 
 function ResetPassword() {
   const [email, setEmail] = useState('');
@@ -19,7 +18,7 @@ function ResetPassword() {
     };
 
     try {
-      const res = await axios.post('http://localhost:3001/api/passwordreset/forget-password', data);
+      const res = await axios.post('https://back-end-j67t.onrender.com/api/passwordreset/forget-password', data);
 
       console.log('successfully Reset mail Sent');
       setEmail('');
