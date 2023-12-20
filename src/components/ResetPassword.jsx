@@ -34,7 +34,7 @@ function ResetPassword() {
 
     try {
       const response = await axios.post(
-        `http://localhost:3001/api/passwordreset/forget-password/${otp}`,
+        `https://back-end-j67t.onrender.com/api/passwordreset/forget-password/${otp}`,
         { password: newPassword }
       );
 

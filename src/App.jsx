@@ -28,11 +28,11 @@ function App() {
     };
 
     try {
-      const response = await axios.post("http://localhost:3001/api/users", registerBody);
+      const response = await axios.post("https://back-end-j67t.onrender.com/api/users", registerBody);
 
       console.log('register user... ', registerBody);
       setRegister({ username: '', name: '', password: '' });
-      const data = response.registerBody;
+      // const data = response.registerBody;
     
     } catch (error) {
       console.log(error);
@@ -47,11 +47,9 @@ function App() {
       password: loginForm.password
     };
 
-    console.log('Logging in user');
     try {
-      const response = await axios.post('http://localhost:3001/api/login', { ...data });
-      const user = response.data;
-      console.log(user);
+      const response = await axios.post('https://back-end-j67t.onrender.com/api/login', { ...data });
+      console.log( 'Login user ',data);
       setLoginForm({ username: '', password: '' });
     } catch (error) {
       console.error('Error:', error);
