@@ -1,8 +1,35 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "../LoginForm.css"
+import axios from "axios";
 
-function LoginForm({handleLogin, loginForm, setLoginForm}){
+function LoginForm(){
+
+  const navigate = useNavigate();
+
+  const [loginForm, setLoginForm] = useState({
+    username: '',
+    password: '',
+  });
+ 
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    const data = {
+      username: loginForm.username,
+      password: loginForm.password
+    };
+
+    try {
+      const response = await axios.post('https://back-end-j67t.onrender.com/api/login', { ...data });
+      console.log( 'Login user ',data);
+      setLoginForm({ username: '', password: '' });
+     navigate('/Home');
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+
     return(
     <div className="sks">
              <form onSubmit={handleLogin} className="longin">

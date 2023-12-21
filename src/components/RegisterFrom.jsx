@@ -1,8 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom"
 import "../Register.css"
+import axios from "axios";
 
-function RegisterFrom({handleRegister, register, setRegister}){
+function RegisterFrom(){
+  const [register, setRegister] = useState({
+    username: '',
+    name: '',
+    password: '',
+  });
+  
+  const handleRegister = async (e) => {
+    e.preventDefault();
+
+    const registerBody = {
+      username: register.username,
+      name: register.name,
+      password: register.password,
+    };
+
+    try {
+      const response = await axios.post("https://back-end-j67t.onrender.com/api/users", registerBody);
+
+      console.log('register user... ', registerBody);
+      setRegister({ username: '', name: '', password: '' });
+      // const data = response.registerBody;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
     return(
         <div className="sk">
              <form onSubmit={handleRegister} className="card">
