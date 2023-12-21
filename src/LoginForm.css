@@ -245,6 +245,10 @@ button {
     flex-direction: column;
    
   }
+  .Register{
+    margin-top: 1px;
+    margin-bottom: 15px;
+  }
 }
 
 
