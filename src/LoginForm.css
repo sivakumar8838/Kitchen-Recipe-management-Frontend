@@ -246,8 +246,11 @@ button {
    
   }
   .Register{
-    margin-top: 1px;
+    margin-top: 3px;
     margin-bottom: 15px;
+  }
+  .submits{
+    margin-bottom: 10px;
   }
 }
 
