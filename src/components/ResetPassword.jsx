@@ -66,21 +66,22 @@ function ResetPassword() {
           <p className='p'>{res_mgs}</p>
         
           <div className='button-diva'>
+           <button onClick={handleSendOTP} className='submit3'>
+            Send OTP
+            </button>
+          </div>
+          <div className='login'>
           
           <Link to='/' className='Link'>
           <button>
           <span className='box'>
           Login
           </span>
-            
           </button>
-        
         </Link>
-            <button onClick={handleSendOTP} className='submit3'>
-            Send OTP
-            </button>
+     
           </div>
-        
+         
         </div>
         {res_mgs === 'Reset email sent successfully' ? (
           <div className='res'>
