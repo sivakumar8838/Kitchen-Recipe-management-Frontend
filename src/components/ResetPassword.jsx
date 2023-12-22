@@ -14,7 +14,7 @@ function ResetPassword() {
     e.preventDefault();
 
     const data = {
-      username: email,
+      username: email,z
     };
 
     try {

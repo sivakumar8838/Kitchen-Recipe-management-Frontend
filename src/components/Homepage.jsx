@@ -1,49 +1,54 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Home.css';
+import { useNavigate } from 'react-router-dom';
 
 function Homepage() {
   const [home, setHome] = useState([]);
 
-  const handlerecipes = async (e) => {
-    e.preventDefault();
+  const navigate = useNavigate();
 
-    try {
-      const response = await axios.get('https://kitchen-recipe-management-agpb.onrender.com/api/Recipe');
-      console.log(response.data);
-      setHome(response.data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+
+  useEffect(() => {
+   
+    const fetchRecipes = async () => {
+      try {
+        const response = await axios.get('https://kitchen-recipe-management-agpb.onrender.com/api/Recipe');
+        
+        setHome(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchRecipes();
+  }, []); 
+
+  const handleRecipes = () => {
+    navigate('/Recipes');
+  } 
 
   return (
     <div className='div'>
-      <button onClick={handlerecipes}>Load Recipes</button>
-
+    <button>Home</button>
+    <button onClick={handleRecipes}>Chicken</button>
+    <button>Biryani</button>
+    <button>Veg</button>
+    <button>Paneer</button>
+    <button onClick={handleRecipes}>
       <div className="recipe-container">
-  {home.map((recipe) => (
-    <section key={recipe._id} className="card5">
-
-      {/* <svg
-        viewBox="0 0 16 16"
-        className="bi bi-image-fill"
-        fill="currentColor"
-        height="40"
-        width="40"
-        xmlns=""
-      > */}
-      <img className='img' height={200}  width={250}src={recipe.img}lt={recipe.name}/>
-      <p className='p'>{recipe.name}</p>
-      {/* </svg> */}
-      <div className="card5__content">
-        <p className="card5__title">{recipe.name}</p>
-        <p className="card5__description">{recipe.description}</p>
+        {home.map((recipe) => (
+          <section key={recipe._id} className="card5">
+            <img className='img' height={200} width={250} src={recipe.img} alt={recipe.name} />
+            <p className='p'>{recipe.name}</p>
+            <div className="card5__content">
+              <p className="card5__title">{recipe.name}</p>
+              <p className="card5__description">{recipe.description}</p>
+            </div>
+          </section>
+        ))}
       </div>
-    </section>
-  ))}
-</div>
-
+      </button>
     </div>
   );
 }

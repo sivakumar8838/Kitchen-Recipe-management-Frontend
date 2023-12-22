@@ -4,6 +4,7 @@ import Register from './components/RegisterFrom';
 import Login from './components/LoginFom';
 import ResetPassword from './components/ResetPassword';
 import Homepage from './components/Homepage';
+import Recipes from './components/Recipes';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
           <Route path='/' element={<Login  />} />
           <Route path='/register' element={<Register />} />
           <Route path='/Home' element={<Homepage />} />
+          <Route path='/Recipes' element={<Recipes />} />
         </Routes>
       </Router>
     </div>
