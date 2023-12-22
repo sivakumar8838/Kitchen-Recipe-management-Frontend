@@ -21,7 +21,7 @@ function LoginForm(){
     };
 
     try {
-      const response = await axios.post('https://back-end-j67t.onrender.com/api/login', { ...data });
+      const response = await axios.post('https://kitchen-recipe-management-agpb.onrender.com/api/login', { ...data });
       console.log( 'Login user ',data);
       setLoginForm({ username: '', password: '' });
      navigate('/Home');

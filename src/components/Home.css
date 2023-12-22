@@ -1,0 +1,119 @@
+.card5 {
+    margin-top: 30px;
+    margin-right: 0px;
+    margin-left: 50px;
+    margin-bottom: 1px;
+   text-align: center;
+   overflow: hidden;
+   }
+   .img {
+   margin-bottom: -20px;
+  }
+  
+.p{
+font-size: x-large;
+color: rgb(242, 242, 248);
+  font-style: italic;
+}
+  
+/*-----------------------------------------------------------*/
+
+section.card5 {
+  margin-bottom: 10px;
+  position: relative;
+  width: 233px;
+  height: 240px;
+  background-color: #080808;
+  border-radius: 10px;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  perspective: 1000px;
+  transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.card5 svg {
+  fill: #000;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border-radius: 3px;
+}
+.card5:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px #000000;
+  background-color: #f2f2f2;
+  color: #ffffff;
+}
+
+.card5__content {
+  color: #000000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #0c0c0c;
+  transform: rotateX(-90deg);
+  transform-origin: bottom;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card5:hover .card5__content {
+  transform: rotateX(0deg);
+}
+
+.card5__title {
+  margin: 0;
+  padding-left: 5px;
+  font-size: 24px;
+  color: #fcf7f7;
+  font-weight: 700;
+}
+
+.card5:hover svg {
+  scale: 0;
+}
+
+.card5__description {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: #fdf9f9;
+  line-height: 1.4;
+}
+
+/*--------------------------------------------------*/
+
+@media screen and (min-width: 1500px){
+  .card5 {
+    margin-top: 10px;
+     margin-left: 20px;
+     margin-right: -5px;
+   }
+ 
+}
+
+@media screen and (max-width: 1200px) {
+  .card5 {
+   margin-top: 10px;
+    margin-left: 19px;
+    margin-right: 15px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card5{
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .card5 {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+}

@@ -20,7 +20,7 @@ function RegisterFrom(){
     };
 
     try {
-      const response = await axios.post("https://back-end-j67t.onrender.com/api/users", registerBody);
+      const response = await axios.post("https://kitchen-recipe-management-agpb.onrender.com/api/users", registerBody);
 
       console.log('register user... ', registerBody);
       setRegister({ username: '', name: '', password: '' });

@@ -18,7 +18,7 @@ function ResetPassword() {
     };
 
     try {
-      const res = await axios.post('https://back-end-j67t.onrender.com/api/passwordreset/forget-password', data);
+      const res = await axios.post('https://kitchen-recipe-management-agpb.onrender.com/api/passwordreset/forget-password', data);
 
       console.log('successfully Reset mail Sent');
       setEmail('');
@@ -34,7 +34,7 @@ function ResetPassword() {
 
     try {
       const response = await axios.post(
-        `https://back-end-j67t.onrender.com/api/passwordreset/forget-password/${otp}`,
+        `https://kitchen-recipe-management-agpb.onrender.com/api/passwordreset/forget-password/${otp}`,
         { password: newPassword }
       );
 
