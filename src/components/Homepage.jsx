@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import './Home.css';
 import { useNavigate } from 'react-router-dom';
+import Navibar from './Navibar';
 
 function Homepage() {
   const [home, setHome] = useState([]);
@@ -29,7 +30,9 @@ function Homepage() {
 
   return (
     <div className='div'>
+
         <div className="recipe-container">
+        <Navibar/>
           {home.map((recipe) => (
             <section key={recipe._id} className="card5" onClick={() => handleRecipes(recipe._id)}>
               <img className='img' height={200} width={250} src={recipe.img} alt={recipe.name} />

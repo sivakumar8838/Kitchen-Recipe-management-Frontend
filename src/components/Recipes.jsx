@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import './Recipes.css'
+import Navibar from './Navibar';
 
 function Recipes() {
   const [recipe, setRecipe] = useState([]);
@@ -11,17 +12,17 @@ function Recipes() {
     if (e) {
       e.preventDefault();
     }
-  
+
     const slicedUrl = currentUrl.slice(-24);
-  
+
     try {
       const response = await axios.get(`https://kitchen-recipe-management-agpb.onrender.com/api/Recipe/${slicedUrl}`);
       setRecipe(response.data);
+      console.log(recipe)
     } catch (error) {
       console.error(error);
     }
   };
-  
 
   useEffect(() => {
     handlecilk();
@@ -30,7 +31,7 @@ function Recipes() {
   return (
     <div>
       <div className="recipe-container">
-         
+         <Navibar/>
             <section className='card6'>
             <h1>{recipe.name}</h1>
 
@@ -40,25 +41,32 @@ function Recipes() {
                 <h2>description</h2>
 
                 <p>{recipe.description}</p>
-                <h2>ingredients </h2>
-                <p>
-                {recipe.ingredients}</p>
-                <h2>instructions</h2>
-                <p> {recipe.instructions} </p>
+                <h2>Ingredients</h2>
+   {recipe.ingredients && recipe.ingredients.length > 0 && (
+  <div className='listItems'>
+    <ul>
+      {recipe.ingredients.map((ingredient, index) => (
+        <li key={index}>{ingredient}</li>
+      ))}
+    </ul>
+  </div>
+)}
+
+{recipe.instructions && recipe.instructions.length > 0 && (
+  <div>
+    <h2>Instructions</h2>
+    <ol>
+      {recipe.instructions.map((instruction, index) => (
+        <li key={index}>{instruction}</li>
+      ))}
+    </ol>
+  </div>
+)}
               </div>
-              {/* <div className="recipe-container">
-          {home.map((recipe) => (
-            <section key={recipe._id} className="card5" onClick={() => handleRecipes(recipe._id)}>
-              <img className='img' height={200} width={250} src={recipe.img} alt={recipe.name} />
-              <p className='p'>{recipe.name}</p>
-              <div className="card5__content">
-                <p className="card5__title">{recipe.name}</p>
-                <p className="card5__description">{recipe.description}</p>
-              </div> */}
+
             </section>
         </div>
     </div>
   );
 }
-
 export default Recipes;
