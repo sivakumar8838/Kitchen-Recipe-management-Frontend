@@ -14,8 +14,9 @@
 
 .n {
   font-size: x-large;
-  color: rgb(242, 242, 248);
+  color: rgb(241, 241, 246);
   font-style: italic;
+
 }
 
 /*-----------------------------------------------------------*/
@@ -81,12 +82,15 @@ margin: 10px 9px 4px 2px;
   margin: 10px 0 0;
   font-size: 14px;
   color: #fdf9f9;
-  line-height: 1.4;
+  line-height: 1.1;
 }
 
 @media (max-width: 767px) {
   section.card5 {
-    width: 50%; /* Take full width */
+    width: 50%;
     margin: 10px 25% ;
+  }
+  .card5{
+    margin-top: 20px;
   }
 }
