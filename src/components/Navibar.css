@@ -1,169 +1,174 @@
 nav {
-    background-color: #333;
-    padding: 4px;
-    padding-bottom: 0px;
-    margin-bottom: 0px;
-  
-  
-  }
-  
-  nav a {
-    color: rgb(249, 244, 244);
-    text-decoration: none;
-    margin: 0 9px;
-    text-align: center;
-    padding: 1px;
-  }
-  
-  nav a:hover{
-    background-color: rgb(44, 194, 134);
-    border-radius: 10px;
-  }
-  
-  ul {
-    list-style-type: none;
-    padding-bottom: 8px;
-    margin: 0;
-  }
-  
-  li {
-    display: inline-block;
-    margin-right: 30px;
-    margin-top: 0px;
-    color:rgb(8, 175, 246);
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-  #portfolio-container {
-    display: flex;
-    justify-content: space-between;
-  }
-  .siva{
-    margin-left: 100px;
-   
-  }
-  
-  #portfolios {
-    text-align: left;
-    font-size: 30px;
-    padding-left: 5px;
-    padding-top: 1px;
-    text-shadow:
-      0px 0px 10px rgb(8, 175, 246),
-      0px 0px 20px rgb(8, 175, 246),
-      0px 0px 30px rgb(8, 175, 246),
-      0px 0px 40px rgb(8, 175, 246),
-      0px 0px 50px rgb(8, 175, 246);
-    color: rgb(204, 217, 233);
-  }
-  
-  #checkbox {
+  background-color: #333;
+  padding: 4px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  height: 70px;
+}
+
+.menu{
+  margin-left: 100px;
+  margin-top: -60px;
+}
+
+nav a {
+  color: rgb(249, 244, 244);
+  text-decoration: none;
+  margin: 0 9px;
+  text-align: center;
+  padding: 1px;
+}
+
+nav a:hover{
+  background-color: rgb(44, 194, 134);
+  border-radius: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding-bottom: 8px;
+  margin: 0;
+}
+
+li {
+  display: inline-block;
+  margin-right: 30px;
+  margin-top: 0px;
+  color:rgb(8, 175, 246);
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+#portfolio-container {
+  display: flex;
+  justify-content: space-between;
+}
+.siva{
+  margin-left: 100px;
+  padding-left: 10px;
+ 
+}
+
+#portfolios {
+  text-align: left;
+  font-size: 30px;
+  margin-bottom: px ;
+  text-shadow:
+    0px 0px 10px rgb(8, 175, 246),
+    0px 0px 20px rgb(8, 175, 246),
+    0px 0px 30px rgb(8, 175, 246),
+    0px 0px 40px rgb(8, 175, 246),
+    0px 0px 50px rgb(8, 175, 246);
+  color: rgb(204, 217, 233);
+}
+
+#checkbox {
+  display: none;
+}
+
+.toggle {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition-duration: .5s;
+}
+
+.bars {
+  width: 100%;
+  height: 4px;
+  background-color: rgb(176, 92, 255);
+  border-radius: 4px;
+}
+
+#bar2 {
+  transition-duration: .8s;
+}
+
+#bar1,#bar3 {
+  width: 70%;
+}
+
+#checkbox:checked + .toggle .bars {
+  position: absolute;
+  transition-duration: .5s;
+}
+
+#checkbox:checked + .toggle #bar2 {
+  transform: scaleX(0);
+  transition-duration: .5s;
+}
+
+#checkbox:checked + .toggle #bar1 {
+  width: 100%;
+  transform: rotate(45deg);
+  transition-duration: .5s;
+}
+
+#checkbox:checked + .toggle #bar3 {
+  width: 100%;
+  transform: rotate(-45deg);
+  transition-duration: .5s;
+}
+
+#checkbox:checked + .toggle {
+  transition-duration: .5s;
+  transform: rotate(180deg);
+}
+@media(min-width:770px) {
+  #checkbox,
+  .toggle,
+  .bars{
     display: none;
   }
-  
-  .toggle {
-    position: relative;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    transition-duration: .5s;
+}
+
+@media (max-width: 768px) {
+
+  nav{
+      height: 52px;
   }
-  
-  .bars {
-    width: 100%;
-    height: 4px;
-    background-color: rgb(176, 92, 255);
-    border-radius: 4px;
+ 
+  #portfolios{
+      margin-top: 0px;
+      color: rgb(236, 235, 235);
   }
-  
-  #bar2 {
-    transition-duration: .8s;
+  div ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      background-color: #333;
+      position: absolute;
+      top: 83px;
+      right: 0;
+      width: 40%;
+      z-index: 1;
+      opacity: 0;
+      transform: translateY(-20px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
   }
-  
-  #bar1,#bar3 {
-    width: 70%;
+
+  div ul.show {
+      opacity: 1;
+      transform: translateY(0);
   }
-  
-  #checkbox:checked + .toggle .bars {
-    position: absolute;
-    transition-duration: .5s;
+
+  div ul li {
+      padding: 15px;
+      text-align: center;
+      border-bottom: 1px solid #555;
   }
-  
-  #checkbox:checked + .toggle #bar2 {
-    transform: scaleX(0);
-    transition-duration: .5s;
+
+  #right {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 20px 33px;
+      cursor: pointer;
   }
-  
-  #checkbox:checked + .toggle #bar1 {
-    width: 100%;
-    transform: rotate(45deg);
-    transition-duration: .5s;
-  }
-  
-  #checkbox:checked + .toggle #bar3 {
-    width: 100%;
-    transform: rotate(-45deg);
-    transition-duration: .5s;
-  }
-  
-  #checkbox:checked + .toggle {
-    transition-duration: .5s;
-    transform: rotate(180deg);
-  }
-  @media(min-width:770px) {
-    #checkbox,
-    .toggle,
-    .bars{
-      display: none;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    nav{
-        height: 55px;
-    }
-   
-    #portfolios{
-        margin-top: 0px;
-        color: rgb(236, 235, 235);
-    }
-    div ul {
-        list-style: none;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        background-color: #333;
-        position: absolute;
-        top: 83px;
-        right: 0;
-        width: 40%;
-        z-index: 1;
-        opacity: 0;
-        transform: translateY(-20px);
-        transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-  
-    div ul.show {
-        opacity: 1;
-        transform: translateY(0);
-    }
-  
-    div ul li {
-        padding: 15px;
-        text-align: center;
-        border-bottom: 1px solid #555;
-    }
-  
-    #right {
-        position: absolute;
-        top: 0;
-        right: 0;
-        margin: 20px 30px;
-        cursor: pointer;
-    }
-  }
+}

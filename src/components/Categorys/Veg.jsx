@@ -28,6 +28,7 @@ function Veg() {
     {biryaniRecipes.map((recipe) => (
       <section key={recipe._id} className="card5" onClick={() => handleRecipes(recipe._id)}>
         <img className='img' height={200} width={250} src={recipe.img} alt={recipe.name} />
+        <p className='n'>{recipe.name}</p>
         <div className="card5__content">
           <p className="card5__title">{recipe.name}</p>
           <p className="card5__description">{recipe.description}</p>

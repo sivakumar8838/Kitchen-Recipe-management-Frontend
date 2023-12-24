@@ -37,18 +37,18 @@ function Recipes() {
 
               <img alt={recipe.name} src={recipe.img} className='img2'/>
               <div >
-                <h2> category</h2><p>{recipe.category}</p>
+                <h2> category</h2><p className='h'>{recipe.category}</p>
                 <h2>description</h2>
 
                 <p>{recipe.description}</p>
                 <h2>Ingredients</h2>
    {recipe.ingredients && recipe.ingredients.length > 0 && (
-  <div className='listItems'>
-    <ul>
+  <div className='p'>
+    <ol>
       {recipe.ingredients.map((ingredient, index) => (
-        <li key={index}>{ingredient}</li>
+        <p key={index}>{ingredient}</p>
       ))}
-    </ul>
+    </ol>
   </div>
 )}
 
@@ -57,7 +57,7 @@ function Recipes() {
     <h2>Instructions</h2>
     <ol>
       {recipe.instructions.map((instruction, index) => (
-        <li key={index}>{instruction}</li>
+        <p key={index}>{instruction}</p>
       ))}
     </ol>
   </div>

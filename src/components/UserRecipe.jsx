@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { NavLink } from 'react-router-dom';
 import Navibar from './Navibar';
+import './UserRecipes.css'
 
 const UserRecipe = () => {
   const [recipes, setRecipes] = useState([]);
@@ -59,21 +60,21 @@ const UserRecipe = () => {
     <div><Navibar />
       <h1>User Recipes</h1>
       <h2>Create Recipe</h2>
-      <form onSubmit={(e) => { e.preventDefault(); handleCreateRecipe(); }}>
+      <form onSubmit={(e) => { e.preventDefault(); handleCreateRecipe(); }}> 
         <label>Name:
-          <input type="text" value={newRecipe.name} onChange={(e) => setNewRecipe({ ...newRecipe, name: e.target.value })}required /> <br />
+          <input type="text" className='input7'  placeholder='Enter your Name...' value={newRecipe.name} onChange={(e) => setNewRecipe({ ...newRecipe, name: e.target.value })}required /> <br />
         </label>
         <label>Category:
-          <input type="text" value={newRecipe.category} onChange={(e) => setNewRecipe({ ...newRecipe, category: e.target.value })} required/> <br />
+          <input type="text" className='input7'  placeholder='Enter your Category...' value={newRecipe.category} onChange={(e) => setNewRecipe({ ...newRecipe, category: e.target.value })} required/> <br />
         </label>
         <label>Description:
-          <input type="text" value={newRecipe.description} onChange={(e) => setNewRecipe({ ...newRecipe, description: e.target.value })} required /> <br />
+          <input type="text" className='input7'  placeholder='Enter your Description...' value={newRecipe.description} onChange={(e) => setNewRecipe({ ...newRecipe, description: e.target.value })} required /> <br />
         </label>
         <label>Ingredients: <br />
-          <textarea cols='40' rows='5' type="text" value={newRecipe.ingredients} onChange={(e) => setNewRecipe({ ...newRecipe, ingredients: e.target.value.split(',') })} required/> <br />
+          <textarea cols='40' className='input8'  placeholder='Enter your Ingredients...' rows='5' type="text" value={newRecipe.ingredients} onChange={(e) => setNewRecipe({ ...newRecipe, ingredients: e.target.value.split(',') })} required/> <br />
         </label>
         <label>Instructions: <br />
-          <textarea cols='40' rows='5' type="text" value={newRecipe.instructions} onChange={(e) => setNewRecipe({ ...newRecipe, instructions: e.target.value.split(',') })} required/> <br />
+          <textarea cols='40' className='input8'  placeholder='Enter your Instructions...' rows='5' type="text" value={newRecipe.instructions} onChange={(e) => setNewRecipe({ ...newRecipe, instructions: e.target.value.split(',') })} required/> <br />
         </label>
         <button type="submit" className='submit'>Create Recipe</button>
           </form>
