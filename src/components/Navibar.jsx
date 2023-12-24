@@ -26,7 +26,7 @@ function Navibar() {
           <li><Link to='/chicken' onClick={closeMenu}>Chicken</Link></li>
           <li><Link to='/paneer' onClick={closeMenu}>Paneer</Link></li>
           <li><Link to='/create' onClick={closeMenu}>My Recipe</Link></li>
-          {/* <li><a href='#contact' onClick={closeMenu}>Contact</a></li> */}
+          <li><Link to='/' onClick={closeMenu}>Logout</Link></li>
         </ul>
 
         <div id='right'>
