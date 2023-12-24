@@ -29,7 +29,7 @@ function Recipes() {
   }, []);
 
   return (
-    <div>
+    <div className='v'>
       <div className="recipe-container">
          <Navibar/>
             <section className='card6'>
@@ -55,7 +55,7 @@ function Recipes() {
 {recipe.instructions && recipe.instructions.length > 0 && (
   <div>
     <h2>Instructions</h2>
-    <ol>
+    <ol className='i'>
       {recipe.instructions.map((instruction, index) => (
         <p key={index}>{instruction}</p>
       ))}

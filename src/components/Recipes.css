@@ -9,10 +9,16 @@
   }
   
   .img2 {
-    margin-bottom: -20px;
+    width: 30%;
   }
   
   .p {
+    text-align: left;
+    font-size: large;
+    color: rgb(11, 11, 11);
+    font-style: italic;
+  }
+  .i {
     text-align: left;
     font-size: large;
     color: rgb(11, 11, 11);
@@ -28,11 +34,13 @@
   /*-----------------------------------------------------------*/
   
   section.card6 {
-    margin-left: px;
-    margin-bottom: 10px;
+    margin-right: 25px;
+    margin-left: 25px;
+    margin-bottom: 42px;
+    margin-top: 40px;
     position: relative;
-    width: 655px;
-    background-color: #898989;
+    width: auto ;
+    background-color: #fcf8f8;
     border-radius: 10px;
     display: inline-block;
     align-items: center;
@@ -41,10 +49,13 @@
     perspective: 1000px;
     transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
+  .v{
+    background-color: rgb(9, 9, 9);
+  }
   
   .card6:hover  {
     transform: scale(1.05);
-    box-shadow: 0 8px 16px #000000;
+    box-shadow: 0 8px 16px #090909;
    
     color: #020202;
   }
@@ -54,7 +65,18 @@
   section.card6 {
     width: 100%; /* Take full width */
     margin: 10px 0;
+    margin-top: 8.5%;
   }
 }
+
+@media  (min-width: 1280px) {
+  section.card6{
+ width: 90%;
+ margin-left: 80px;
+ margin-bottom: 45px;
+ 
+}
+}
+
 
   
